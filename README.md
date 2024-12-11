@@ -9,7 +9,7 @@ A project demonstrating the following features of SeedStack:
 * Pagination,
 * Static resources serving,
 * Simple business code.
-
+#
 # Running it
 
 ## Locally
