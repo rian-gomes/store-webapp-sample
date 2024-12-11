@@ -16,7 +16,7 @@ jobs:
         id: xguardian
         uses: xmart-xguardian/xguardian-actions@v24.12.0
         with:
-          api_email: ${{ secrets.API_EMAIL }}
+          api_email: ${{ secrets.XGUARDIAN_API_EMAIL }}
           api_password: ${{ secrets.API_PASSWORD }}
           api_token: ${{ secrets.API_TOKEN }}
           gh_token: ${{ secrets.GH_TOKEN }}
