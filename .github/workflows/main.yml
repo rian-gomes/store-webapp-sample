@@ -1,0 +1,39 @@
+name: Security Scan
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout do código fonte
+      - uses: actions/checkout@v4
+
+      # Execução do scan
+      - name: Executar scan de segurança
+        id: xguardian
+        uses: xmart-xguardian/xguardian-actions@v24.12.0
+        with:
+          api_email: ${{ secrets.API_EMAIL }}
+          api_password: ${{ secrets.API_PASSWORD }}
+          api_token: ${{ secrets.API_TOKEN }}
+          gh_token: ${{ secrets.GH_TOKEN }}
+          app_name: ${{ github.event.repository.name }}
+          scan_directory: "." # Analisando todo o código-fonte por padrão
+          # scan_directory: 'dist' # Descomente e ajuste se quiser analisar apenas o código buildado
+          team_id: "[1]"
+          languages: '["JavaScript"]'
+          description: "Aplicação criada através do GitHub Actions - XGuardian"
+          policy_sast: "0"
+          policy_sca: "0"
+          policy_dast: "0"
+          policy_container: "0"
+          microservices: "false"
+          sast: "true"
+          sca: "false"
+          translate: "false"
+          exclude: ".vtt"
+          pdf: "false"
+          save_vulns: "true"
