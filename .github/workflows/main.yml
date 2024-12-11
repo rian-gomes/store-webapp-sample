@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-##
+###
 jobs:
   security-scan:
     runs-on: ubuntu-latest
