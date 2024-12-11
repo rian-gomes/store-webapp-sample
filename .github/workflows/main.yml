@@ -2,7 +2,7 @@ name: Security Scan
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   security-scan:
