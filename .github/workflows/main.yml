@@ -36,4 +36,4 @@ jobs:
           translate: "false"
           exclude: ".vtt"
           pdf: "false"
-          save_vulns: "true"
+          save_vulns: "false"
